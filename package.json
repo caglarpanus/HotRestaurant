@@ -1,8 +1,8 @@
 {
-  "name": "HotRestaurant",
+  "name": "hotrestaurant",
   "version": "1.0.0",
-  "description": "",
-  "main": "json.js",
+  "description": "* Basic app demonstrating Node and Express with jQuery. Overall purpose is to help schedule reservation requests. Restaurant has just 5 tables available. First five requests get a reservation, every request after that is sent to the waiting list.",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2"
@@ -12,6 +12,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caglarpanus/HotRestaurant.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caglarpanus/HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/caglarpanus/HotRestaurant#readme"
 }

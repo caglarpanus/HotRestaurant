@@ -1,5 +1,5 @@
 var tableData = require("../data/tableData.js");
-var waitingListData = require("../data/waitingListData.js");
+var waitListData = require("../data/waitingListData.js");
 
 // app is "express". 
 module.exports = function(app){
@@ -8,7 +8,7 @@ module.exports = function(app){
     });
 
     app.get("/api/waitlist", function(req,res){
-        res.json(waitingListData);
+        res.json(waitListData);
     });
 
     app.post("/api/tables", function(req,res){
@@ -18,13 +18,13 @@ module.exports = function(app){
         }
         else{
             waitingListData.push(req.body)
-            res.json(waitingListData);
+            res.json(waitListData);
         }
     });
 
     app.post("/api/clear", function(req,res){
         
         tableData = [];
-        waitingListData = [];
+        waitListData = [];
     });
 }
