@@ -2,9 +2,9 @@ var waitingListArray = [
     {
         
         'customerName': 'Caglar',
+        'customerPhone': '000-000-0000',
         'customerEmail': 'caglar@caglar.com',
-        'customerId': '9874',
-        'customerPhone': '000-000-0000'
+        'customerID': '9874'
     }
 ]
 
