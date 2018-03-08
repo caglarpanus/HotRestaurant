@@ -14,11 +14,11 @@ module.exports = function(app){
     app.post("/api/tables", function(req,res){
         if(tableData.length < 5 ){
             tableData.push(req.body);
-            res.json(tableData)
+            res.json(true)
         }
         else{
             waitListData.push(req.body)
-            res.json(waitListData);
+            res.json(false);
         }
     });
 
