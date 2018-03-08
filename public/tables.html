@@ -53,21 +53,19 @@
     <footer class="footer">
       <div class="container">
         <p>Control Panel</p>
-        <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
       </div>
     </footer>
 
   </div>
 
 </body>
-
+</html>
 
 <script type="text/javascript">
 
-  var currentURL = window.location.origin;
-
-  function runTabel(){
-    
+function runTabel(){
+    var currentURL = window.location.origin;
     $.ajax({
         url:currentURL + "/api/tables",
         method:"GET" 
@@ -86,7 +84,7 @@
   };
 
   function runWaitList(){
-
+    var currentURL = window.location.origin;
     $.ajax({
       url:currentURL + "/api/waitlist",
       method:"GET"
@@ -96,19 +94,20 @@
         var waitlistSection = $("<div>");
         
         waitlistSection.addClass("well");
-        waitlistSection.attr("id","waitlistWell" + i + 1);
+        waitlistSection.attr("id","waitlistWell-" + i + 1);
         $("#waitlistSection").append(waitlistSection);
 
         var tableNumber = i + 1;
 
         $("#waitlistWell-" + i + 1).append("<h2><span class='label label-primary'>" + tableNumber + "</span> | " + waitlistData[i].customerID + "</h2>");
-      }
+
+      };
 
     });
   };
 
   function clearTable(){
-
+    var currentURL = window.location.origin;
     $.ajax({
       url:currentURL + "/api/clear",
       method:"POST"
@@ -123,6 +122,5 @@
 
   runTabel();
   runWaitList();
-
+  
 </script>
-</html>

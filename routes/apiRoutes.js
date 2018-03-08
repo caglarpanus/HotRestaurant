@@ -17,7 +17,7 @@ module.exports = function(app){
             res.json(tableData)
         }
         else{
-            waitingListData.push(req.body)
+            waitListData.push(req.body)
             res.json(waitListData);
         }
     });

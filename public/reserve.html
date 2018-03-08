@@ -80,25 +80,27 @@
 </html>
 
 <script type="text/javascript">
-   
-    $("#submit").click(function(event){
 
+    $(".submit").on("click", function(event) {
       event.preventDefault();
-      
-      newReservation = {
-        customerName:$("#reserve-name").val().trim(),
-        customerPhone:$("#reserve-phone").val().trim(),
-        customerEmail:$("#reserve-email").val().trim(),
-        customerID:$("#reserve-unique-id").val().trim()
-      }
+      var newReservation = {
+        customerName: $("#reserve-name").val().trim(),
+        phoneNumber: $("#reserve-phone").val().trim(),
+        customerEmail: $("#reserve-email").val().trim(),
+        customerID: $("#reserve-unique-id").val().trim()
+      };
 
-      $.post("/api/tables", newReservation, function(data){
+      console.log(newReservation);
 
-          if(data){
-            alert("You are booked! Thank you!");
+      $.post("/api/tables", newReservation,
+        function(data) {
+          
+          if (data) {
+            alert("You are officially booked!");
           }
-          else{
-            alert("Sorry, you are on the wait list!")
+
+          else {
+            alert("Sorry you are on the wait list");
           }
 
           $("#reserve-name").val("");
@@ -106,7 +108,8 @@
           $("#reserve-email").val("");
           $("#reserve-unique-id").val("");
 
-      });
+        });
 
     });
+  
 </script>
